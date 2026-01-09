@@ -1,7 +1,10 @@
 import axios from "axios";
+import { API_BASE } from "./client";
+
+const baseUrl = `${API_BASE}/api/subjects`;
 
 export const getSubjects = async (token) => {
-  const res = await axios.get("/api/subjects", {
+  const res = await axios.get(baseUrl, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -11,7 +14,7 @@ export const getSubjects = async (token) => {
 
 export const createSubject = async ({ token, name, description }) => {
   const res = await axios.post(
-    "/api/subjects",
+    baseUrl,
     { name, description },
     { headers: { Authorization: `Bearer ${token}` } }
   );
