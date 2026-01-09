@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3001", // definir aqui puerto del backend
+        target: "https://sudyapp-backend.onrender.com", // definir aqui puerto del backend
         changeOrigin: true,
       },
     },
